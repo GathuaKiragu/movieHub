@@ -19,9 +19,9 @@ public class CustomAnimation implements BaseAnimationInterface {
 // When the current item is about to leave the screen we make it dissapear.
     @Override
     public void onPrepareCurrentItemLeaveScreen(View current){
-        View descriptionLayout = current.findViewById(R.id.description_layout);
+        View descriptionLayout = current.findViewById(com.daimajia.slider.library.R.id.description_layout);
         if(descriptionLayout != null){
-            current.findViewById(R.id.description_layout).setVisibility(View.INVISIBLE);
+            current.findViewById(com.daimajia.slider.library.R.id.description_layout).setVisibility(View.INVISIBLE);
         }
 
     }
@@ -30,9 +30,9 @@ public class CustomAnimation implements BaseAnimationInterface {
 
     @Override
     public void onPrepareNextItemShowInScreen(View next){
-        View descriptionLayout = next.findViewById(R.id.description_layout);
+        View descriptionLayout = next.findViewById(com.daimajia.slider.library.R.id.description_layout);
         if (descriptionLayout != null) {
-            next.findViewById(R.id.description_layout).setVisibility(View.INVISIBLE);
+            next.findViewById(com.daimajia.slider.library.R.id.description_layout).setVisibility(View.INVISIBLE);
         }
     }
 
@@ -44,10 +44,10 @@ public class CustomAnimation implements BaseAnimationInterface {
     }
     @Override
     public void onNextItemAppear(View next){
-        View descriptionLayout = next.findViewById(R.id.description_layout);
+        View descriptionLayout = next.findViewById(com.daimajia.slider.library.R.id.description_layout);
         if(descriptionLayout != null){
             float layoutY = ViewHelper.getY(descriptionLayout);
-            next.findViewById(R.id.description_layout).setVisibility(next.VISIBLE);
+            next.findViewById(com.daimajia.slider.library.R.id.description_layout).setVisibility(next.VISIBLE);
 
             ValueAnimator animator = ObjectAnimator.ofFloat(
                     descriptionLayout,"y",layoutY + descriptionLayout.getHeight(),
@@ -57,3 +57,4 @@ public class CustomAnimation implements BaseAnimationInterface {
         }
 
     }
+
