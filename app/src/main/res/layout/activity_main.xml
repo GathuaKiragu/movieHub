@@ -4,7 +4,7 @@
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kiragu.moviehub.MainActivity">
+    tools:context="com.example.kiragu.moviehub.Ui.MainActivity">
 
     <com.daimajia.slider.library.SliderLayout
         android:id="@+id/slider"
@@ -13,6 +13,21 @@
         custom:auto_cycle="true"
         custom:indicator_visibility="visible"
         custom:pager_animation_span="1100"
-        android:layout_height="150dp"/>
+        android:layout_height="180dp"/>
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slider"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
+        android:textColor="@color/colorAccent"
+        android:inputType="textPersonName"
+        android:text="Latest"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
 
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.kiragu.moviehub;
+package com.example.kiragu.moviehub.Ui;
 
 
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.example.kiragu.moviehub.R;
 
 import java.util.HashMap;
 
