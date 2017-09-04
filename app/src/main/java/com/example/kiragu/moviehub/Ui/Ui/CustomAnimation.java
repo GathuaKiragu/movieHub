@@ -1,4 +1,4 @@
-package com.example.kiragu.moviehub.Ui;
+package com.example.kiragu.moviehub.Ui.Ui;
 
 import android.view.View;
 
