@@ -6,27 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.kiragu.moviehub.Ui.Ui.MovieListActivity">
 
-    <EditText
-        android:id="@+id/queryEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Search Movie"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="16dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteY="72dp"
-        tools:layout_editor_absoluteX="126dp"
-        android:layout_below="@+id/queryEditText"
+    <ListView
+        android:id="@+id/movieListview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp" />
-
+        android:layout_alignParentTop="true" />
 </RelativeLayout>

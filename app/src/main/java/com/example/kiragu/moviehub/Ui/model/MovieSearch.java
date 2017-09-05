@@ -14,15 +14,15 @@ public class MovieSearch {
     private String mPoster;
     private String mReleaseDate;
     private Integer mVotes;
-    private ArrayList<Integer> mGenre = new ArrayList<>();
+//    private ArrayList<Integer> mGenre = new ArrayList<>();
 
-    public MovieSearch(String title, String overview, String poster, String releaseDate, Integer votes, ArrayList<Integer> genre){
+    public MovieSearch(String title, String overview, String poster, String releaseDate, Integer votes){
         this.mTitle = title;
         this.mOverview = overview;
         this.mPoster = poster;
         this.mReleaseDate = releaseDate;
         this.mVotes = votes;
-        this.mGenre = genre;
+//        this.mGenre = genre;
     }
     public String getTitle(){
         return mTitle;
@@ -33,13 +33,13 @@ public class MovieSearch {
     public String getPoster(){
         return mPoster;
     }
-    public String getTeleaseDate(){
+    public String getReleaseDate(){
         return mReleaseDate;
     }
     public Integer getVotes(){
         return mVotes;
     }
-    public ArrayList<Integer> getGenre(){
-        return mGenre;
-    }
+//    public ArrayList<Integer> getGenre(){
+//        return mGenre;
+//    }
 }
