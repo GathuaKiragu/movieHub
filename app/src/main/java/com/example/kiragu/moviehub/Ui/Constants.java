@@ -12,10 +12,8 @@ public class Constants {
     public static final String GENRE_BASE_URL = "https://api.themoviedb.org/3/genre/movie/list?api_key=";
 
 
-//    https://api.themoviedb.org/3/search/movie?api_key={{Api_key}}&language=en-US&query=Naked&page=1
+//    https://api.themoviedb.org/3/search/movie?api_key={{Api_key}}&language=en-US&query=Naked
     public static final String SEARCH_BASE_URL = "https://api.themoviedb.org/3/search/movie?api_key=";
     public static final String SEARCH_BASE_ADDITION_URL = "&language=en-US&query=";
     public static final String SEARCH_QUERY ="query";
-    public static final String FINAL_SEARCH_BASE_URL = "&page=1";
-
 }
