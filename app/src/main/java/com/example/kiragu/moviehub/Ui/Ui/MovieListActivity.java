@@ -3,11 +3,14 @@ package com.example.kiragu.moviehub.Ui.Ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.kiragu.moviehub.R;
+import com.example.kiragu.moviehub.Ui.adapters.MovieListAdapter;
 import com.example.kiragu.moviehub.Ui.model.MovieSearch;
 import com.example.kiragu.moviehub.Ui.theMovieDbService;
 
@@ -21,8 +24,10 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class MovieListActivity extends AppCompatActivity {
-    @Bind(R.id.movieListview)
-    ListView mListView;
+    @Bind(R.id.recyclerView)
+    RecyclerView mRecyclerView;
+    private MovieListAdapter mMovieListAdapter;
+
 
     public static final String TAG = MovieListActivity.class.getSimpleName();
     public ArrayList<MovieSearch> mMovieSearch = new ArrayList<>();
@@ -53,30 +58,19 @@ public class MovieListActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 mMovieSearch = theMovieDbService.processResults(response);
-
                 MovieListActivity.this.runOnUiThread(new Runnable() {
 
                     @Override
                     public void run() {
-                        String[] movieNames = new String[mMovieSearch.size()];
-                        for (int i = 0; i < movieNames.length; i++) {
-                            movieNames[i] = mMovieSearch.get(i).getTitle();
-
-                            ArrayAdapter adapter = new ArrayAdapter(MovieListActivity.this,
-                                    android.R.layout.simple_list_item_1, movieNames);
-                            mListView.setAdapter(adapter);
-                            for (MovieSearch movieSearched : mMovieSearch) {
-                                Log.d(TAG, "Title: " + movieSearched.getTitle());
-                                Log.d(TAG, "Description: " + movieSearched.getOverview());
-                                Log.d(TAG, "Poster: " + movieSearched.getPoster());
-                                Log.d(TAG, "Release Dates: " + movieSearched.getReleaseDate());
-                                Log.d(TAG, "Votes" + movieSearched.getVotes());
-                            }
-                        }
+                        mMovieListAdapter = new MovieListAdapter(getApplicationContext(), mMovieSearch);
+                        mRecyclerView.setAdapter(mMovieListAdapter);
+                        RecyclerView.LayoutManager layoutManager =
+                                new LinearLayoutManager(MovieListActivity.this);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                        mRecyclerView.setHasFixedSize(true);
                     }
                 });
             }
         });
     }
 }
-
