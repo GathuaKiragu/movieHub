@@ -31,6 +31,9 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
         mMovieSearch = movieSearches;
     }
 
+    /**
+        Inflating the movie_List_layout and returns it as a viewholder
+    */
         @Override
         public MovieListAdapter.MoviesViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_list_item, parent, false);
@@ -38,16 +41,27 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             return viewHolder;
         }
 
-        @Override
+    /**
+     updating the contents of the ItemView to reflect the movie in the given position.
+     */
+    @Override
         public void onBindViewHolder(MovieListAdapter.MoviesViewHolder holder, int position){
             holder.bindMovies(mMovieSearch.get(position));
         }
 
+    /**
+        Returns the number of items the recyclerView will display
+     */
         @Override
         public int getItemCount() {
             return mMovieSearch.size();
         }
-        public class MoviesViewHolder extends RecyclerView.ViewHolder{
+
+
+    /**
+     * Rendering objects to their respective views in their layouts
+     */
+    public class MoviesViewHolder extends RecyclerView.ViewHolder{
              @Bind(R.id.posterImageView)
              ImageView mPosterImageView;
              @Bind(R.id.movieTitle)
