@@ -2,6 +2,7 @@ package com.example.kiragu.moviehub.Ui.adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.kiragu.moviehub.R;
+import com.example.kiragu.moviehub.Ui.Ui.MovieDetails;
 import com.example.kiragu.moviehub.Ui.model.MovieSearch;
 import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -61,7 +65,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
     /**
      * Rendering objects to their respective views in their layouts
      */
-    public class MoviesViewHolder extends RecyclerView.ViewHolder{
+    public class MoviesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
              @Bind(R.id.posterImageView)
              ImageView mPosterImageView;
              @Bind(R.id.movieTitle)
@@ -75,8 +79,17 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
                 super(itemView);
                 ButterKnife.bind(this, itemView);
                 mContext = itemView.getContext();
+                itemView.setOnClickListener(this);
         }
 
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, MovieDetails.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("movieSearch", Parcels.wrap(mMovieSearch));
+            mContext.startActivity(intent);
+        }
 
         public void bindMovies(MovieSearch movieSearch){
             Picasso.with(mContext).load("http://image.tmdb.org/t/p/w185/"+movieSearch.getPoster()).into(mPosterImageView);

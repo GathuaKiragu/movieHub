@@ -12,11 +12,11 @@ import java.util.ArrayList;
  */
 @Parcel
 public class MovieSearch {
-    private String mTitle;
-    private String mOverview;
-    private String mPoster;
-    private String mReleaseDate;
-    private Integer mVotes;
+    String mTitle;
+    String mOverview;
+    String mPoster;
+    String mReleaseDate;
+    Integer mVotes;
 //    private ArrayList<Integer> mGenre = new ArrayList<>();
     public MovieSearch(String title, String overview, String poster, String releaseDate, Integer votes){
         this.mTitle = title;
@@ -27,6 +27,10 @@ public class MovieSearch {
 //        this.mGenre = genre;
     }
 
+
+    /**
+     * Constructor for parceler
+     */
     public MovieSearch(){
 
     }

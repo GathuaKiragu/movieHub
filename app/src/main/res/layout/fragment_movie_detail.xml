@@ -11,7 +11,7 @@
     android:background="@color/colorPrimary">
 
     <ImageView
-        android:id="@+id/restaurantImageView"
+        android:id="@+id/wallpaperImageView"
         android:layout_width="200dp"
         android:layout_height="280dp"
         android:scaleType="centerCrop"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Movie Title"
-            android:id="@+id/restaurantNameTextView"
+            android:id="@+id/movieTitleTextView"
             android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold"
@@ -43,8 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4.5/5"
-            android:id="@+id/votes"
-            android:layout_alignTop="@+id/restaurantNameTextView"
+            android:id="@+id/voteTextView"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:textColor="@color/colorAccent"
@@ -53,9 +52,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Brunch, American"
-            android:id="@+id/cuisineTextView"
-            android:layout_below="@+id/restaurantNameTextView"
+            android:text="John, Wick"
+            android:id="@+id/releaseDateTextView1"
+            android:layout_below="@+id/voteTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="#000"
@@ -77,13 +76,16 @@
             android:paddingTop="20dp"
             android:paddingRight="30dp"
             android:layout_alignParentBottom="true">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="OVerview"
+                android:id="@+id/overView"
                 android:textColor="#fff"/>
-
+</ScrollView>
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>
