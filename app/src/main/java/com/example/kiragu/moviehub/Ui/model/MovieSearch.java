@@ -1,13 +1,16 @@
 package com.example.kiragu.moviehub.Ui.model;
 
 import com.example.kiragu.moviehub.Ui.Ui.MovieListActivity;
+
+import org.parceler.Parcel;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
  * Created by kiragu on 9/5/17.
  */
-
+@Parcel
 public class MovieSearch {
     private String mTitle;
     private String mOverview;
@@ -15,7 +18,6 @@ public class MovieSearch {
     private String mReleaseDate;
     private Integer mVotes;
 //    private ArrayList<Integer> mGenre = new ArrayList<>();
-
     public MovieSearch(String title, String overview, String poster, String releaseDate, Integer votes){
         this.mTitle = title;
         this.mOverview = overview;
@@ -23,6 +25,10 @@ public class MovieSearch {
         this.mReleaseDate = releaseDate;
         this.mVotes = votes;
 //        this.mGenre = genre;
+    }
+
+    public MovieSearch(){
+
     }
     public String getTitle(){
         return mTitle;
