@@ -44,9 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         HashMap<String,String> url_maps = new HashMap<String, String>();
         url_maps.put("The Fast and Furious 8", "https://www.bellanaija.com/wp-content/uploads/2017/04/pd.jpg");
         url_maps.put("The Boss Baby", "https://i.ytimg.com/vi/tquIfapGVqs/maxresdefault.jpg");
-        url_maps.put("Despicable me 3", "hhttps://thebaytheatre.com/wp-content/uploads/2017/06/depicable-me-3-1496947425.jpg");
+        url_maps.put("Despicable me 3", "https://thebaytheatre.com/wp-content/uploads/2017/06/depicable-me-3-1496947425.jpg");
         url_maps.put("The Mummy", "http://www.dhakamovie.com/wp-content/uploads/2017/07/The-Mummy-2017-1080p-WEBRip.jpg");
-
 
 
         for(String name : url_maps.keySet()){
