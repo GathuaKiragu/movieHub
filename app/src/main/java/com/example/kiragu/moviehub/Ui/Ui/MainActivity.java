@@ -42,10 +42,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         HashMap<String,String> url_maps = new HashMap<String, String>();
-        url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
-        url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
-        url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
-        url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
+        url_maps.put("The Fast and Furious 8", "https://www.bellanaija.com/wp-content/uploads/2017/04/pd.jpg");
+        url_maps.put("The Boss Baby", "https://i.ytimg.com/vi/tquIfapGVqs/maxresdefault.jpg");
+        url_maps.put("Despicable me 3", "hhttps://thebaytheatre.com/wp-content/uploads/2017/06/depicable-me-3-1496947425.jpg");
+        url_maps.put("The Mummy", "http://www.dhakamovie.com/wp-content/uploads/2017/07/The-Mummy-2017-1080p-WEBRip.jpg");
+
 
 
         for(String name : url_maps.keySet()){

@@ -4,6 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.astuetz.PagerSlidingTabStrip;
 import com.example.kiragu.moviehub.R;
 import com.example.kiragu.moviehub.Ui.adapters.MoviesPagerAdapter;
 import com.example.kiragu.moviehub.Ui.model.MovieSearch;
@@ -45,7 +46,11 @@ public class MovieDetails extends AppCompatActivity {
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);
 
-        SmartTabLayout viewPagerTab = (SmartTabLayout) findViewById(R.id.viewpagertab);
-        viewPagerTab.setViewPager(mViewPager);
+
+// Bind the tabs to the ViewPager
+        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        tabs.setViewPager(mViewPager);
+
+
     }
 }
