@@ -13,13 +13,15 @@ import java.util.ArrayList;
 @Parcel
 public class MovieSearch {
     String mTitle;
+    String mName;
     String mOverview;
     String mPoster;
     String mReleaseDate;
     Integer mVotes;
 //    private ArrayList<Integer> mGenre = new ArrayList<>();
-    public MovieSearch(String title, String overview, String poster, String releaseDate, Integer votes){
+    public MovieSearch(String title, String name, String overview, String poster, String releaseDate, Integer votes){
         this.mTitle = title;
+        this.mName = name;
         this.mOverview = overview;
         this.mPoster = poster;
         this.mReleaseDate = releaseDate;
@@ -36,6 +38,9 @@ public class MovieSearch {
     }
     public String getTitle(){
         return mTitle;
+    }
+    public String getName(){
+        return mName;
     }
     public String getOverview(){
         return mOverview;
