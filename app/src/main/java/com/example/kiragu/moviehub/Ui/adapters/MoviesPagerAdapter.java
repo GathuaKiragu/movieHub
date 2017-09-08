@@ -32,6 +32,10 @@ public class MoviesPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return mMovieSearch.get(position).getTitle();
+        if (mMovieSearch.get(position).getTitle().isEmpty()) {
+            return mMovieSearch.get(position).getName();
+        } else {
+            return mMovieSearch.get(position).getTitle();
+        }
     }
 }

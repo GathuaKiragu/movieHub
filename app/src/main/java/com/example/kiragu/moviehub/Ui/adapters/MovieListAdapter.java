@@ -70,7 +70,6 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
              ImageView mPosterImageView;
              @Bind(R.id.movieTitle)
              TextView mMovieTitle;
-             @Bind(R.id.overViewTextView) TextView mOverView;
              @Bind(R.id.votesTextView) TextView mVotesTextView;
              @Bind(R.id.releaseDateTextView) TextView mReleaseDateTextView;
              private Context mContext;
@@ -95,12 +94,9 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             Picasso.with(mContext).load("http://image.tmdb.org/t/p/w185/"+movieSearch.getPoster()).into(mPosterImageView);
             mMovieTitle.setText(movieSearch.getTitle());
             mMovieTitle.setText(movieSearch.getName());
-            mOverView.setText(movieSearch.getOverview());
             mVotesTextView.setText(String.valueOf(movieSearch.getVotes()));
             mReleaseDateTextView.setText(movieSearch.getReleaseDate());
         }
-
     }
-
 }
 

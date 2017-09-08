@@ -66,6 +66,12 @@ public class theMovieDbService {
                             JSONObject movieJSON1 = multiSearchJSON.getJSONObject(i);
                             String title = movieJSON1.optString("title");
                             String name = movieJSON1.optString("name");
+                            String extra = "No Title";
+                            if (name.equals("") ||title.equals("")){
+                                name=extra;
+                                title=extra;
+                            }
+
                             String overview = movieJSON1.optString("overview");
                             String poster = movieJSON1.optString("poster_path");
                             String releaseDate = movieJSON1.optString("release_date");

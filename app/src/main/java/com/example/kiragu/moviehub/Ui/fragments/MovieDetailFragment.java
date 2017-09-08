@@ -51,8 +51,10 @@ public class MovieDetailFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_movie_detail, container, false);
         ButterKnife.bind(this, view);
 
+
         Picasso.with(view.getContext()).load("http://image.tmdb.org/t/p/w185/"+mMovieSearch.getPoster()).into(mImageLabel);
         mMovieTitle.setText(mMovieSearch.getTitle());
+        mMovieTitle.setText(mMovieSearch.getName());
         mVotes.setText(String.valueOf(mMovieSearch.getVotes()));
         mOverViewTexView.setText(mMovieSearch.getOverview());
         mRelaseDateText.setText(mMovieSearch.getReleaseDate());
