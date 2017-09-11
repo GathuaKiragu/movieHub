@@ -5,11 +5,13 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,15 +32,12 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{
     public static final String TAG = MovieListActivity.class.getSimpleName();
 
     @Bind(R.id.slider)
     SliderLayout mSlider;
-    @Bind(R.id.queryEditText)
-    EditText mQueryEditText;
-    @Bind(R.id.submitButton)
-    Button mSubmitButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             Intent intent = getIntent();
             String query = intent.getStringExtra("movies");
-            mSubmitButton.setOnClickListener(this);
         }
     }
 
@@ -78,16 +76,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 //Using intents to pass the typed search query to MovieListActivity
 
-@Override
-public void onClick(View v){
-    if (v == mSubmitButton){
-        String query = mQueryEditText.getText().toString();
-        Intent intent = new Intent(MainActivity.this, MovieListActivity.class);
-        intent.putExtra("query", query);
-        startActivity(intent);
-    }
+//@Override
+//public void onClick(View v){
+//    if (v == mSubmitButton){
+//
+//    }
 
-}
+//}
 
 //    To prevent a memory leak on rotation, \we call stopAutoCycle() on the slider before activity or fragment is destroyed:
     @Override
@@ -100,12 +95,28 @@ public void onClick(View v){
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.option_menu, menu);
+        final MenuItem menuItem = menu.findItem(R.id.search);
 
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Intent intent = new Intent(MainActivity.this, MovieListActivity.class);
+                intent.putExtra("query", query);
+                startActivity(intent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+
+        });
         return true;
     }
-
-
-
-
 
 }
