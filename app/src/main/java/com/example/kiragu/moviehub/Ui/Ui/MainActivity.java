@@ -27,8 +27,9 @@ import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.example.kiragu.moviehub.R;
 import com.example.kiragu.moviehub.Ui.theMovieDbService;
+import com.example.kiragu.moviehub.R;
+
 
 import java.io.IOException;
 import java.util.HashMap;

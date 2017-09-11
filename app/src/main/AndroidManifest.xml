@@ -20,10 +20,6 @@
         </activity>
         <activity android:name=".Ui.Ui.MovieListActivity" />
         <activity android:name=".Ui.Ui.MovieDetails" />
-        <activity
-            android:name=".Ui.others.NavigationDrawer"
-            android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

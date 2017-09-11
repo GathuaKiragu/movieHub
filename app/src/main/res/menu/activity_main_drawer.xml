@@ -3,32 +3,41 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/nav_home" />
         <item
-            android:id="@+id/nav_photos"
-            android:title="@string/nav_photos" />
+            android:id="@+id/nav_action"
+            android:icon="@drawable/action"
+            android:title="@string/nav_action" />
         <item
-            android:id="@+id/nav_movies"
-            android:title="@string/nav_movies" />
+            android:id="@+id/nav_animation"
+            android:icon="@drawable/animation"
+            android:title="@string/nav_animation" />
 
         <item
-            android:id="@+id/nav_notifications"
-            android:title="@string/nav_notifications" />
+            android:id="@+id/nav_comedy"
+            android:icon="@drawable/comedy"
+            android:title="@string/nav_comedy" />
 
         <item
-            android:id="@+id/nav_settings"
-            android:title="@string/nav_settings" />
+            android:id="@+id/nav_documentary"
+            android:icon="@drawable/documentary"
+            android:title="@string/nav_documentary" />
+        <item
+            android:id="@+id/nav_drama"
+            android:icon="@drawable/drama"
+            android:title="@string/nav_drama" />
+
+        <item
+            android:id="@+id/nav_horror"
+            android:icon="@drawable/horror"
+            android:title="@string/nav_horror" />
+
+        <item
+            android:id="@+id/nav_scifi"
+            android:icon="@drawable/scifi"
+            android:title="@string/nav_scifi" />
+
     </group>
-
-    <item android:title="Other">
-        <menu>
-            <item
-                android:id="@+id/nav_about_us"
-                android:title="@string/nav_about_us" />
-            <item
-                android:id="@+id/nav_privacy_policy"
-                android:title="@string/privacy_policy" />
-        </menu>
-    </item>
 
 </menu>
