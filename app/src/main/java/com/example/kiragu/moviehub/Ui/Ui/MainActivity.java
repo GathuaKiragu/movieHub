@@ -1,46 +1,30 @@
 package com.example.kiragu.moviehub.Ui.Ui;
 
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.example.kiragu.moviehub.Ui.ActionMoviesActivity;
-import com.example.kiragu.moviehub.Ui.theMovieDbService;
+import com.example.kiragu.moviehub.Ui.MovieCategoriesActivity;
 import com.example.kiragu.moviehub.R;
 
 
-import java.io.IOException;
 import java.util.HashMap;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 public static final String TAG=MovieListActivity.class.getSimpleName();
@@ -50,8 +34,10 @@ public static final String TAG=MovieListActivity.class.getSimpleName();
 
 
 // Navigation Drawer
-private DrawerLayout mDrawerLayout;
-private ActionBarDrawerToggle mToggle;
+        private DrawerLayout mDrawerLayout;
+        private ActionBarDrawerToggle mToggle;
+
+        Integer[] categoryId = {28, 16, 35, 99, 18, 27, 872};
 
 
 @Override
@@ -160,11 +146,45 @@ public boolean onQueryTextChange(String newText){
         public boolean onNavigationItemSelected(MenuItem item){
             int id = item.getItemId();
 
-            if (id == R.id.nav_action){
-                    Intent myIntent = new Intent(MainActivity.this, ActionMoviesActivity.class);
+            if (id == R.id.nav_home) {
+                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
                     MainActivity.this.startActivity(myIntent);
-            }else{
-                    Toast.makeText(getApplicationContext(), "Working.", Toast.LENGTH_LONG).show();
+
+
+            }else if(id == R.id.nav_action){
+                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                    myIntent.putExtra("28", categoryId[0]);
+                    MainActivity.this.startActivity(myIntent);
+
+            }else if(id == R.id.nav_animation){
+                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                    myIntent.putExtra("16", categoryId[1]);
+                    MainActivity.this.startActivity(myIntent);
+
+            }else if(id == R.id.nav_comedy){
+                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                    myIntent.putExtra("35", categoryId[2]);
+                    MainActivity.this.startActivity(myIntent);
+
+            }else if(id == R.id.nav_documentary){
+                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                    myIntent.putExtra("99", categoryId[3]);
+                    MainActivity.this.startActivity(myIntent);
+
+            }else if(id == R.id.nav_drama){
+                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                    myIntent.putExtra("18", categoryId[4]);
+                    MainActivity.this.startActivity(myIntent);
+
+            }else if(id == R.id.nav_horror){
+                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                    myIntent.putExtra("27", categoryId[5]);
+                    MainActivity.this.startActivity(myIntent);
+
+            }else if(id == R.id.nav_scifi){
+                    Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
+                    myIntent.putExtra("872", categoryId[6]);
+                    MainActivity.this.startActivity(myIntent);
             }
             return true;
     }

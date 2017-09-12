@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.kiragu.moviehub.R;
 
-public class ActionMoviesActivity extends AppCompatActivity {
+public class MovieCategoriesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

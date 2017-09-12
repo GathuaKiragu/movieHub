@@ -15,4 +15,7 @@ public class Constants {
     public static final String SEARCH_BASE_URL = "https://api.themoviedb.org/3/search/multi?api_key=";
     public static final String SEARCH_BASE_ADDITION_URL = "&language=en-US&query=";
     public static final String SEARCH_QUERY ="query";
+    public static final String MOVIELIST_BASE_URL = "https://api.themoviedb.org/3/genre/28/movies?api_key=ef6fcb87410464d91e04191209a574ef&language=en-US&include_adult=false&sort_by=created_at.asc";
+
+
 }
