@@ -1,4 +1,5 @@
-package com.example.kiragu.moviehub.Ui;
+package com.example.kiragu.moviehub.Ui.service;
+import com.example.kiragu.moviehub.Ui.Constants;
 import com.example.kiragu.moviehub.Ui.model.MovieSearch;
 
 import org.json.JSONArray;

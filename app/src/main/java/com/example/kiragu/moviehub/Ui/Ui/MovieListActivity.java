@@ -1,30 +1,22 @@
 package com.example.kiragu.moviehub.Ui.Ui;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.kiragu.moviehub.R;
 import com.example.kiragu.moviehub.Ui.adapters.MovieListAdapter;
 import com.example.kiragu.moviehub.Ui.model.MovieSearch;
-import com.example.kiragu.moviehub.Ui.theMovieDbService;
+import com.example.kiragu.moviehub.Ui.service.theMovieDbService;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import dmax.dialog.SpotsDialog;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
