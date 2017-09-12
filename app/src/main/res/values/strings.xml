@@ -19,13 +19,13 @@
 
     <!-- Toolbar titles when navigation menu item is selected -->
     <!--<string-array name="nav_item_activity_titles">-->
-        <!--<item>Home</item>-->
-        <!--<item>Actions</item>-->
-        <!--<item>Animations</item>-->
-        <!--<item>Comedy</item>-->
-        <!--<item>Documentary</item>-->
-        <!--<item>Drama</item>-->
-        <!--<item>Horror</item>-->
-        <!--<item>Sci-Fi</item>-->
+    <!--<item>Home</item>-->
+    <!--<item>Actions</item>-->
+    <!--<item>Animations</item>-->
+    <!--<item>Comedy</item>-->
+    <!--<item>Documentary</item>-->
+    <!--<item>Drama</item>-->
+    <!--<item>Horror</item>-->
+    <!--<item>Sci-Fi</item>-->
     <!--</string-array>-->
 </resources>

@@ -31,12 +31,11 @@ dependencies {
     //Optional: see how to use the utility.
 
     //Optional: see how to use the utility.
-    
 
     // Glide image library
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile'com.android.support:design:26.0.0-alpha1'
+    compile 'com.android.support:design:26.0.0-alpha1'
     compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:support-v4:26.0.0-beta1'

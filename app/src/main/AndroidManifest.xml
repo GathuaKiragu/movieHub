@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".Ui.Ui.MovieListActivity" />
         <activity android:name=".Ui.Ui.MovieDetails" />
+        <activity android:name=".Ui.ActionMoviesActivity"></activity>
     </application>
 
 </manifest>
