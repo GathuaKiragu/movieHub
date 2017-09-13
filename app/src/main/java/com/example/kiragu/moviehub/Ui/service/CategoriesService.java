@@ -23,12 +23,12 @@ import okhttp3.Response;
 
 public class CategoriesService {
 
-    public static void getCategory(Integer categeoryId, Callback callback) {
+    public static void findCategory(String category, Callback callback) {
             OkHttpClient client = new OkHttpClient.Builder()
                     .build();
 
             HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.MOVIELIST_BASE_URL).newBuilder();
-            String url = urlBuilder.build().toString() + Constants.THE_MOVIE_Db_Api + Constants.MOVIELIST_2 + Constants.MOVIELIST_FINAL ;
+            String url = urlBuilder.build().toString() + category + Constants.MOVIELIST_2 + Constants.THE_MOVIE_Db_Api  + Constants.MOVIELIST_FINAL ;
 
             Request request = new Request.Builder()
                     .url(url)
