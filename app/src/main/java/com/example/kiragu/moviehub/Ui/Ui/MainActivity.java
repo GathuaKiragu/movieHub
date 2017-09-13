@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         @Override
         public boolean onNavigationItemSelected(MenuItem item) {
                 int id = item.getItemId();
-                String[] category = {"28", "16", "35", "99", "18", "27", "872"};
+                String[] category = {"28", "16", "35", "99", "18", "27", "878"};
 
                 if (id == R.id.nav_home) {
                         Intent myIntent = new Intent(MainActivity.this, MainActivity.class);
