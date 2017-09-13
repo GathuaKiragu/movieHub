@@ -1,6 +1,7 @@
 package com.example.kiragu.moviehub.Ui.Ui;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -8,6 +9,8 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,15 +20,22 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.example.kiragu.moviehub.R;
+import com.example.kiragu.moviehub.Ui.adapters.UpcomingMoviesAdapters;
+import com.example.kiragu.moviehub.Ui.model.MovieSearch;
+import com.example.kiragu.moviehub.Ui.service.upcomingService;
 
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-        public static final String TAG = MovieListActivity.class.getSimpleName();
 
         @Bind(R.id.slider)
         SliderLayout mSlider;
@@ -34,6 +44,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Navigation Drawer
         private DrawerLayout mDrawerLayout;
         private ActionBarDrawerToggle mToggle;
+
+        public static final String TAG = MovieListActivity.class.getSimpleName();
+        public ArrayList<MovieSearch> mMovieSearch = new ArrayList<>();
+        private ProgressDialog progress;
+        private UpcomingMoviesAdapters mUpcoming;
+        @Bind(R.id.recyclerView2)
+        RecyclerView mRecyclerView2;
+
+
 
 
         @Override
@@ -75,6 +94,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
                 navigationView.setNavigationItemSelectedListener(this);
+
+                progress = ProgressDialog.show(this, "MovieHub",
+                        "Loading...", true);
+                getUpcomingMovies();
         }
 
         @Override
@@ -180,5 +203,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
         }
 
+        private void getUpcomingMovies() {
+                final upcomingService movieService = new upcomingService();
 
+                movieService.upcomingMovies(new Callback() {
+                        @Override
+                        public void onFailure(Call call, IOException e) {
+                                e.printStackTrace();
+                        }
+                        @Override
+
+                        public void onResponse(Call call, Response response) throws IOException {
+                                mMovieSearch = upcomingService.processResults(response);
+                                MainActivity.this.runOnUiThread(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                                progress.show();
+                                                mUpcoming = new UpcomingMoviesAdapters(getApplicationContext(), mMovieSearch);
+                                                mRecyclerView2.setAdapter(mUpcoming);
+                                                RecyclerView.LayoutManager layoutManager =
+                                                        new LinearLayoutManager(MainActivity.this);
+                                                mRecyclerView2.setLayoutManager(layoutManager);
+                                                mRecyclerView2.setHasFixedSize(true);
+                                                if (progress.isShowing()) {
+                                                        progress.dismiss();
+                                                }
+                                        }
+                                });
+                        }
+                });
+        }
 }
