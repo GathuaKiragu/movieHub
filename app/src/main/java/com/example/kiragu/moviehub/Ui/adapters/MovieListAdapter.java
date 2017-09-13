@@ -66,19 +66,21 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
      * Rendering objects to their respective views in their layouts
      */
     public class MoviesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-             @Bind(R.id.posterImageView)
-             ImageView mPosterImageView;
-             @Bind(R.id.movieTitle)
-             TextView mMovieTitle;
-             @Bind(R.id.votesTextView) TextView mVotesTextView;
-             @Bind(R.id.releaseDateTextView) TextView mReleaseDateTextView;
-             private Context mContext;
+        @Bind(R.id.posterImageView)
+        ImageView mPosterImageView;
+        @Bind(R.id.movieTitle)
+        TextView mMovieTitle;
+        @Bind(R.id.votesTextView)
+        TextView mVotesTextView;
+        @Bind(R.id.releaseDateTextView)
+        TextView mReleaseDateTextView;
+        private Context mContext;
 
-            public MoviesViewHolder(View itemView){
-                super(itemView);
-                ButterKnife.bind(this, itemView);
-                mContext = itemView.getContext();
-                itemView.setOnClickListener(this);
+        public MoviesViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.bind(this, itemView);
+            mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
         }
 
         @Override
@@ -90,10 +92,14 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
             mContext.startActivity(intent);
         }
 
-        public void bindMovies(MovieSearch movieSearch){
-            Picasso.with(mContext).load("http://image.tmdb.org/t/p/w185/"+movieSearch.getPoster()).into(mPosterImageView);
-            mMovieTitle.setText(movieSearch.getTitle());
-            mMovieTitle.setText(movieSearch.getName());
+//        binding movies to the corresponding layout
+        public void bindMovies(MovieSearch movieSearch) {
+            Picasso.with(mContext).load("http://image.tmdb.org/t/p/w185/" + movieSearch.getPoster()).into(mPosterImageView);
+            if (movieSearch.getTitle().isEmpty()){
+                mMovieTitle.setText(movieSearch.getName());
+            }else{
+                mMovieTitle.setText(movieSearch.getTitle());
+            }
             mVotesTextView.setText(String.valueOf(movieSearch.getVotes()));
             mReleaseDateTextView.setText(movieSearch.getReleaseDate());
         }

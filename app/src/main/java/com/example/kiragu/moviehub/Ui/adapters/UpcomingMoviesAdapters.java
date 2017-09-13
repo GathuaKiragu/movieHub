@@ -96,7 +96,6 @@ public class UpcomingMoviesAdapters extends RecyclerView.Adapter<UpcomingMoviesA
             public void bindMovies(MovieSearch movieSearch){
                 Picasso.with(mContext).load("http://image.tmdb.org/t/p/w185/"+movieSearch.getPoster()).into(mPosterImageView);
                 mMovieTitle.setText(movieSearch.getTitle());
-                mMovieTitle.setText(movieSearch.getName());
                 mVotesTextView.setText(String.valueOf(movieSearch.getVotes()));
                 mReleaseDateTextView.setText(movieSearch.getReleaseDate());
             }
