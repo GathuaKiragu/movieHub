@@ -67,8 +67,9 @@ public class theMovieDbService {
                             JSONObject movieJSON1 = multiSearchJSON.getJSONObject(i);
                             String title = movieJSON1.optString("title");
                             String name = movieJSON1.optString("name");
-                            String extra = "No Title";
-                            if (name.equals("") ||title.equals("")){
+                            String extra = "No Title availabe for this";
+
+                            if (name.equals("") || title.equals("")){
                                 name=extra;
                                 title=extra;
                             }
