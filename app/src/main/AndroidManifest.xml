@@ -18,9 +18,25 @@
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         <!--</activity>-->
-        <activity android:name=".Ui.Ui.MovieListActivity" />
-        <activity android:name=".Ui.Ui.MovieDetails" />
-        <activity android:name=".Ui.Ui.MovieCategoriesActivity" />
+        <activity android:name=".Ui.Ui.MovieListActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.kiragu.moviehub.Ui.Ui.MainActivity">
+        </meta-data>
+        </activity>
+
+        <activity android:name=".Ui.Ui.MovieDetails">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.kiragu.moviehub.Ui.Ui.MovieListActivity">
+        </meta-data>
+        </activity>
+        <activity android:name=".Ui.Ui.MovieCategoriesActivity">
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.kiragu.moviehub.Ui.Ui.MainActivity">
+        </meta-data>
+        </activity>
 
 
         <activity android:name=".Ui.Ui.SplashScreenActivity"
