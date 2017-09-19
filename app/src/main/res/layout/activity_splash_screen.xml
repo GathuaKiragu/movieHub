@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/wallpaper1"
     tools:context="com.example.kiragu.moviehub.Ui.Ui.SplashScreenActivity">
 
     <TextView
@@ -16,9 +16,8 @@
         android:textSize="50dp"
         tools:layout_editor_absoluteX="88dp"
         tools:layout_editor_absoluteY="131dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView5"
@@ -31,13 +30,13 @@
         android:layout_centerHorizontal="true"
         android:textStyle="bold"/>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:src="@drawable/film"
-        android:layout_below="@+id/textView4"
-        android:layout_alignRight="@+id/textView4"
-        android:layout_alignEnd="@+id/textView4" />
+    <!--<ImageView-->
+        <!--android:id="@+id/imageView2"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:src="@drawable/film"-->
+        <!--android:layout_below="@+id/textView4"-->
+        <!--android:layout_alignRight="@+id/textView4"-->
+        <!--android:layout_alignEnd="@+id/textView4" />-->
 
 </RelativeLayout>

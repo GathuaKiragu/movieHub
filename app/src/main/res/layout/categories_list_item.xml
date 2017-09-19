@@ -10,7 +10,7 @@
         android:layout_height="140dp"
         android:paddingLeft="2dp"
         android:id="@+id/posterImageView"
-        android:src="@drawable/poster"
+        android:src="@drawable/wallpaper1"
         android:scaleType="centerCrop"/>
 
     <RelativeLayout
