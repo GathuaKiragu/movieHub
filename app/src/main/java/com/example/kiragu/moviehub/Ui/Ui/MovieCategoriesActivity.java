@@ -17,6 +17,7 @@ import com.example.kiragu.moviehub.Ui.service.theMovieDbService;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,8 +32,9 @@ public class MovieCategoriesActivity extends AppCompatActivity {
     private CategoriesListAdapter mCategoriesAdapter;
     @Bind(R.id.recyclerView1)
     RecyclerView mRecyclerView1;
+    String[] names ={"Actions", "Animations", "Comedy", "Documentary", "Drama", "Horror", "Scifi"};
 
-
+    String[] category = {"28", "16", "35", "99", "18", "27", "878"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,23 @@ public class MovieCategoriesActivity extends AppCompatActivity {
         progress = ProgressDialog.show(this, "MovieHub",
                 "Loading...", true);
         getCategory(category);
-    }
+
+            if (category == "28") {
+                getSupportActionBar().setTitle("Action movies");
+            } else if (category.equals("16")) {
+                getSupportActionBar().setTitle("Animation movies");
+            } else if (category.equals("35")) {
+                getSupportActionBar().setTitle("Comedies");
+            } else if (category.equals("99")){
+                getSupportActionBar().setTitle("Documentaries");
+            } else if (category.equals("18")){
+                getSupportActionBar().setTitle("Drama movies");
+            } else if (category.equals("27")) {
+                getSupportActionBar().setTitle("Horror Movies");
+            } else {
+                getSupportActionBar().setTitle("Science Fiction");
+            }
+        }
 
     private void getCategory(String category) {
         final CategoriesService categoryService = new CategoriesService();

@@ -11,46 +11,41 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Ui.Ui.MainActivity"/>
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+        <activity android:name=".Ui.Ui.MainActivity" />
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <activity android:name=".Ui.Ui.MovieListActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.kiragu.moviehub.Ui.Ui.MainActivity">
-        </meta-data>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kiragu.moviehub.Ui.Ui.MainActivity"></meta-data>
         </activity>
-
         <activity android:name=".Ui.Ui.MovieDetails">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.kiragu.moviehub.Ui.Ui.MovieListActivity">
-        </meta-data>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kiragu.moviehub.Ui.Ui.MovieListActivity"></meta-data>
         </activity>
         <activity android:name=".Ui.Ui.MovieCategoriesActivity">
             <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.kiragu.moviehub.Ui.Ui.MainActivity">
-        </meta-data>
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kiragu.moviehub.Ui.Ui.MainActivity"></meta-data>
         </activity>
+        <activity
+            android:name=".Ui.Ui.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-        <activity android:name=".Ui.Ui.SplashScreenActivity"
-        android:label="@string/app_name"
-        android:screenOrientation="portrait"
-        android:theme="@android:style/Theme.Black.NoTitleBar" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-
+        <activity android:name=".Ui.Ui.ErrorPage"></activity>
     </application>
 
 </manifest>

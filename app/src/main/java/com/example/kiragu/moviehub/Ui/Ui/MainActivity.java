@@ -12,14 +12,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.example.kiragu.moviehub.R;
+import com.example.kiragu.moviehub.Ui.AppStatus;
 import com.example.kiragu.moviehub.Ui.adapters.UpcomingMoviesAdapters;
 import com.example.kiragu.moviehub.Ui.model.MovieSearch;
 import com.example.kiragu.moviehub.Ui.service.upcomingService;
@@ -95,8 +98,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
                 navigationView.setNavigationItemSelectedListener(this);
 
-                progress = ProgressDialog.show(this, "MovieHub",
-                        "Loading...", true);
+
+                if (AppStatus.getInstance(this).isOnline()) {
+                        progress = ProgressDialog.show(this, "MovieHub",
+                                "Loading...", true);
+                } else {
+                        Intent intent = new Intent(MainActivity.this, ErrorPage.class);
+                        startActivity(intent);
+                }
                 getUpcomingMovies();
         }
 
